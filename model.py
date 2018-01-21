@@ -26,15 +26,35 @@ def generator(samples, batch_size=32):
 			angles = []
 			for batch_sample in batch_samples:
 				center_name = './data/IMG/'+batch_sample[0].split('/')[-1]
+				left_name = './data/IMG/'+batch_sample[1].split('/')[-1]
+				right_name = './data/IMG/'+batch_sample[2].split('/')[-1]
 				center_image = cv2.imread(center_name)
-				center_image_mirrored = cv2.flip(center_image, 0)
+				left_image = cv2.imread(left_name)
+				right_image = cv2.imread(right_name)
 				center_angle = float(batch_sample[3])
-				center_angle_mirrored = -center_angle
+				left_angle = center_angle + 0.2
+				right_angle = center_angle - 0.2
 				images.append(center_image)
 				angles.append(center_angle)
-				images.append(center_image_mirrored)
-				angles.append(center_angle_mirrored)
-
+				images.append(left_image)
+				angles.append(left_angle)
+				images.append(right_image)
+				angles.append(right_angle)
+				if abs(center_angle) > 0.1:
+					center_image_mirrored = cv2.flip(center_image, 1)
+					center_angle_mirrored = -center_angle
+					images.append(center_image_mirrored)
+					angles.append(center_angle_mirrored)
+				if abs(left_angle) > 0.1:
+					left_image_mirrored = cv2.flip(left_image, 1)
+					left_angle_mirrored = -left_angle
+					images.append(left_image_mirrored)
+					angles.append(left_angle_mirrored)
+				if abs(right_angle) > 0.1:
+					right_image_mirrored = cv2.flip(right_image, 1)
+					right_angle_mirrored = - right_angle
+					images.append(right_image_mirrored)
+					angles.append(right_angle_mirrored)
 			X_train = np.array(images)
 			y_train = np.array(angles)
 			yield sklearn.utils.shuffle(X_train, y_train)
