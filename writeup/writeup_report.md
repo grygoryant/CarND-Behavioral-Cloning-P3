@@ -112,11 +112,13 @@ In order to augment data set I used the images from left and right cameras with 
 Here's the example of left and right cameras images:
 
 	<img src="left.jpg">
+
 	<img src="right.jpg">
 
 Additionally, each image and steering angle value were flipped to get more training data:
 
 	<img src="right.jpg">
+	
 	<img src="right_flipped.jpg">
 
 After the collection process, I had 60000 number of data points. Recovery data was checked manually using my tool which outputs current image with current steering angle and allows to delete this data portion from the data set.
