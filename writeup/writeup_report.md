@@ -90,24 +90,32 @@ The most interesting part of this project was to capture the training data. I wa
 Examples of training data can be found below.
 
 * Center lane driving
+
 	<img src="center.jpg">
 
 * Recovery driving
+
 	<img src="recovery1.jpg">
+
 	<img src="recovery2.jpg">
+
 	<img src="recovery3.jpg">
 
 * Second track right lane driving
+
 	<img src="second_track_center1.jpg">
+
 	<img src="second_track_center2.jpg">
 
 In order to augment data set I used the images from left and right cameras with the steering angle values which were added with the adjusting factor (+0.2 for left and -0.2 for right).
  
 Here's the example of left and right cameras images:
+
 	<img src="left.jpg">
 	<img src="right.jpg">
 
 Additionally, each image and steering angle value were flipped to get more training data:
+
 	<img src="right.jpg">
 	<img src="right_flipped.jpg">
 
