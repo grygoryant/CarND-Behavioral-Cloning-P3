@@ -110,10 +110,12 @@ Examples of training data can be found below.
 In order to augment data set I used the images from left and right cameras with the steering angle values which were added with the adjusting factor (+0.2 for left and -0.2 for right).
  
 Here's the example of left and right cameras images:
+
 	<img src="left.jpg">
 	<img src="right.jpg">
 
 Additionally, each image and steering angle value were flipped to get more training data:
+
 	<img src="right.jpg">
 	<img src="right_flipped.jpg">
 
