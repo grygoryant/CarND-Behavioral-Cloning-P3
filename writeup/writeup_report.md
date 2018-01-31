@@ -109,14 +109,18 @@ Examples of training data can be found below.
 
 In order to augment data set I used the images from left and right cameras with the steering angle values which were added with the adjusting factor (+0.2 for left and -0.2 for right).
  
-Here's the example of left and right cameras images:
+* Left and right cameras images:
 
 	<img src="left.jpg">
+
 	<img src="right.jpg">
 
 Additionally, each image and steering angle value were flipped to get more training data:
 
+* Flipped images:
+
 	<img src="right.jpg">
+
 	<img src="right_flipped.jpg">
 
 After the collection process, I had 60000 number of data points. Recovery data was checked manually using my tool which outputs current image with current steering angle and allows to delete this data portion from the data set.
